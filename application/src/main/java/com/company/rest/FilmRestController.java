@@ -9,10 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,7 +27,7 @@ public class FilmRestController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<Film> getFilm(@RequestParam Long id) {
+	public ResponseEntity<Film> getFilm(@PathVariable Long id) {
 		return new ResponseEntity<>(filmService.getById(id), HttpStatus.OK);
 	}
 
@@ -45,7 +42,7 @@ public class FilmRestController {
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, path = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity deleteFilm(@RequestParam Long id) {
+	public ResponseEntity deleteFilm(@PathVariable Long id) {
 		filmService.delete(id);
 		return new ResponseEntity(HttpStatus.NO_CONTENT);
 	}
@@ -56,8 +53,7 @@ public class FilmRestController {
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, path = "/update/{id}")
-	public ResponseEntity<Film> updateFilm(@RequestParam long id, @RequestBody Film film) {
+	public ResponseEntity<Film> updateFilm(@PathVariable long id, @RequestBody Film film) {
 		return new ResponseEntity<>(filmService.update(id, film), HttpStatus.OK);
 	}
-
 }
