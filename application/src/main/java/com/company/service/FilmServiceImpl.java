@@ -46,8 +46,8 @@ public class FilmServiceImpl implements FilmService {
 	}
 
 	@Override
-	public Film update(Film film) {
-		Film updatedFilm = filmRepository.getOne(film.getId());
+	public Film update(Long id, Film film) {
+		Film updatedFilm = filmRepository.getOne(id);
 		if (updatedFilm != null) {
 			updatedFilm.setDirector(film.getDirector());
 			updatedFilm.setName(film.getName());

@@ -55,8 +55,9 @@ public class FilmRestController {
 		return new ResponseEntity(filmService.add(film), HttpStatus.OK);
 	}
 
-	public ResponseEntity<Film> updateFilm() {
-		return null;
+	@RequestMapping(method = RequestMethod.PUT, path = "/update/{id}")
+	public ResponseEntity<Film> updateFilm(@RequestParam long id, @RequestBody Film film) {
+		return new ResponseEntity<>(filmService.update(id, film), HttpStatus.OK);
 	}
 
 }

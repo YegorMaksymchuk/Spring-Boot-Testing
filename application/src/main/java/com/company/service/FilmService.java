@@ -18,5 +18,5 @@ public interface FilmService {
 
 	Film add(Film film);
 
-	Film update(Film film);
+	Film update(Long id, Film film);
 }
