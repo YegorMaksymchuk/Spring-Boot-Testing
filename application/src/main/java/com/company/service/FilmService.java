@@ -8,7 +8,7 @@ import java.util.Map;
 public interface FilmService {
 	List<Film> addFilms(Map<String, String> films);
 
-	List<Film> findFilmsByProducer(String producer);
+	List<Film> findFilmsByDirector(String director);
 
 	List<Film> findAllFilms();
 }

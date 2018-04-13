@@ -21,12 +21,12 @@ public class FilmServiceImpl implements FilmService {
 	}
 
 	@Override
-	public List<Film> findFilmsByProducer(String producer) {
-		return filmRepository.findByProducer(producer);
+	public List<Film> findFilmsByDirector(String director) {
+		return filmRepository.findByDirector(director);
 	}
 
 	@Override
 	public List<Film> findAllFilms() {
-		return null;
+		return filmRepository.findAll();
 	}
 }

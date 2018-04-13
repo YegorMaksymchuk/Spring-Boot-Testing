@@ -5,7 +5,9 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Table(name = "films")
 @Entity
 @Getter
 @Setter
@@ -21,5 +23,5 @@ public class Film {
 	private String name;
 
 	@NonNull
-	private String producer;
+	private String director;
 }
