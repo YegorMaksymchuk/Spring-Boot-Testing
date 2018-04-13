@@ -29,4 +29,31 @@ public class FilmServiceImpl implements FilmService {
 	public List<Film> findAllFilms() {
 		return filmRepository.findAll();
 	}
+
+	@Override
+	public Film getById(Long id) {
+		return filmRepository.getOne(id);
+	}
+
+	@Override
+	public void delete(Long id) {
+		filmRepository.deleteById(id);
+	}
+
+	@Override
+	public Film add(Film film) {
+		return filmRepository.save(film);
+	}
+
+	@Override
+	public Film update(Film film) {
+		Film updatedFilm = filmRepository.getOne(film.getId());
+		if (updatedFilm != null) {
+			updatedFilm.setDirector(film.getDirector());
+			updatedFilm.setName(film.getName());
+			return filmRepository.saveAndFlush(film);
+		} else {
+			return null;
+		}
+	}
 }

@@ -11,4 +11,12 @@ public interface FilmService {
 	List<Film> findFilmsByDirector(String director);
 
 	List<Film> findAllFilms();
+
+	Film getById(Long id);
+
+	void delete(Long id);
+
+	Film add(Film film);
+
+	Film update(Film film);
 }
