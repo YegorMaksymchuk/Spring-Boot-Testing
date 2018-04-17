@@ -60,14 +60,14 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Swagger2 -->
+        <!-- SWAGGER2 -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger.version}</version>
         </dependency>
 
-        <!-- Swagger-ui -->
+        <!-- SWAGGER-UI -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
@@ -86,6 +86,14 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!-- UNITILS -->
+        <dependency>
+            <groupId>org.unitils</groupId>
+            <artifactId>unitils-core</artifactId>
+            <version>3.4.6</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
