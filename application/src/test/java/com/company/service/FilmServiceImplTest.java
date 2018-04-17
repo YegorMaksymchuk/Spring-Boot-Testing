@@ -1,7 +1,6 @@
-package com.company.unit.service;
+package com.company.service;
 
 import com.company.model.Film;
-import com.company.service.FilmService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

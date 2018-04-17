@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project xmlns:con="http://eviware.com/soapui/config" id="b2c54c17-4121-4d41-b972-03be71d3daea"
+                    activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.4.0"
+                    abortOnError="false" runType="SEQUENTIAL">
+    <con:settings/>
+    <con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService"
+                   id="ef98acc6-22ac-42f9-9b92-942e51014107" wadlVersion="http://wadl.dev.java.net/2009/02"
+                   name="http://localhost:8080" type="rest">
+        <con:settings/>
+        <con:definitionCache type="TEXT" rootPart=""/>
+        <con:endpoints>
+            <con:endpoint>http://localhost:8080</con:endpoint>
+        </con:endpoints>
+        <con:resource name="all" path="/films" id="0ab1d11b-9c41-4e42-8120-dcdfb86f1f82">
+            <con:settings/>
+            <con:parameters/>
+            <con:method name="Film 1" id="7e77e3af-26f7-4753-bbe9-cdf94e602c62" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/hal+json;charset=UTF-8</con:mediaType>
+                    <con:status>404</con:status>
+                    <con:params/>
+                    <con:element xmlns:film="http://localhost/film">film:Fault</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/hal+json;charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:film="http://localhost/film">film:Response</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:film="http://localhost/film">film:Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="f672ec5a-e70c-49d8-a18e-af6c6c73af51" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8080</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/film</con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="get" path="/film/{id}" id="10f99a0d-42b8-4e2c-a211-ee6a105d5ff4">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>id</con:name>
+                    <con:value>id</con:value>
+                    <con:style>TEMPLATE</con:style>
+                    <con:default>id</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>accept</con:name>
+                    <con:style>HEADER</con:style>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Method 1" id="68fb5913-4097-41d6-9743-86f1366a3155" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                    <con:status>500</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://localhost/film/1">ns:Fault</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://localhost/film/1">ns:Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="5a239e03-ef99-4927-a108-8e1463446ebe" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8080</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/film/1</con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="id" value="2"/>
+                        <con:entry key="accept" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>id</con:entry>
+                        <con:entry/>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="add" path="/film/add" id="d92d54f1-7ec7-4e96-bd01-af81c3d8de6e">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>accept</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>Content-Type</con:name>
+                    <con:value/>
+                    <con:style>HEADER</con:style>
+                    <con:default/>
+                    <con:description xsi:nil="true"/>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Method 1" id="64ccee21-47a1-4598-9bd3-e7051e0a2c10" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:add="http://localhost/film/add">add:Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="4c43455a-3113-45cb-ad7a-8e58674599ed" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8080</con:endpoint>
+                    <con:request>{
+                        "director": "string",
+                        "name": "string"
+                        }
+                    </con:request>
+                    <con:originalUri>http://localhost/film/add</con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="accept" value="application/json"/>
+                        <con:entry key="Content-Type" value="application/json"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>accept</con:entry>
+                        <con:entry>Content-Type</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="delete" path="/film/{id}" id="10f99a0d-42b8-4e2c-a211-ee6a105d5ff4">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>id</con:name>
+                    <con:value>id</con:value>
+                    <con:style>TEMPLATE</con:style>
+                    <con:default>id</con:default>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Method 1" id="68fb5913-4097-41d6-9743-86f1366a3155" method="DELETE">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>204</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:request name="Request 1" id="5a239e03-ef99-4927-a108-8e1463446ebe" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8080</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/film/1</con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <entry key="id" value="1" xmlns="http://eviware.com/soapui/config"/>
+                    </con:parameters>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="list" path="/film/list" id="07f7b0b1-a8fc-46fe-97fe-9c8397e90de4">
+            <con:settings/>
+            <con:parameters/>
+            <con:method name="Method 1" id="83a8d130-7d07-4e15-9a56-830985410608" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element>Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="1bd4ae1e-ccb1-4534-81bf-c1a45271af73" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8080</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/film/list</con:originalUri>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="update" path="/film/update/{id}" id="bd32d756-8082-48b9-a4f7-89f00e08be50">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>id</con:name>
+                    <con:value>id</con:value>
+                    <con:style>TEMPLATE</con:style>
+                    <con:default>id</con:default>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="Method 1" id="6daf3f35-ca8f-45fd-a67e-2a335ea0ca7a" method="PUT">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                    <con:status>500</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://localhost/film/update/3">ns:Fault</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element xmlns:ns="http://localhost/film/update/3">ns:Response</con:element>
+                </con:representation>
+                <con:request name="Request 1" id="b068ea9a-feb4-438a-82cd-22e6a2037ed0" mediaType="application/json"
+                             postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8080</con:endpoint>
+                    <con:request>{
+                        "director": "string",
+                        "name": "string"
+                        }
+                    </con:request>
+                    <con:credentials>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <entry key="id" value="1" xmlns="http://eviware.com/soapui/config"/>
+                    </con:parameters>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:testSuite id="4f8dd5b3-1744-40be-b2a1-eb30bfafba82" name="Demo-Film-Service-Test">
+        <con:description>TestSuite generated for REST Service [http://localhost:8080]</con:description>
+        <con:settings/>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="d7a80025-c5bc-4ff2-b0ca-1e02591362e0" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="Verify /films request" searchProperties="true">
+            <con:description>TestCase generated for REST Resource [all] located at [/films]</con:description>
+            <con:settings/>
+            <con:testStep type="restrequest" name="Request 1" id="46c747f0-2e8d-46d4-8303-ac497cbea282">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="http://localhost:8080"
+                            resourcePath="/films" methodName="Film 1" xsi:type="con:RestRequestStep">
+                    <con:restRequest name="Request 1" id="f672ec5a-e70c-49d8-a18e-af6c6c73af51"
+                                     mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8080</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/film</con:originalUri>
+                        <con:assertion type="Valid HTTP Status Codes" id="5aa3da1f-d961-4c90-a971-8ae7cd1502e5"
+                                       name="Valid HTTP Status Codes">
+                            <con:configuration>
+                                <codes>200</codes>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="7b3c18cc-4fd9-4102-a243-017fd7dfff4f" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="Verify getFilm /film/{id} request"
+                      searchProperties="true">
+            <con:description>TestCase generated for REST Resource [get] located at [/film/{id}]</con:description>
+            <con:settings/>
+            <con:testStep type="restrequest" name="Request 1" id="ca93adc0-4da7-482b-a40a-101a72e75807">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="http://localhost:8080"
+                            resourcePath="/film/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+                    <con:restRequest name="Request 1" id="5a239e03-ef99-4927-a108-8e1463446ebe"
+                                     mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8080</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/film/1</con:originalUri>
+                        <con:assertion type="Valid HTTP Status Codes" id="eec947f5-6e2d-4686-b878-b43b40af2e78"
+                                       name="Valid HTTP Status Codes">
+                            <con:configuration>
+                                <codes>200</codes>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="id" value="2"/>
+                            <con:entry key="accept" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>id</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="07bcb1a4-a7f7-4545-89a8-61425474d936" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="Verify add new film request" searchProperties="true">
+            <con:description>TestCase generated for REST Resource [add] located at [/film/add]</con:description>
+            <con:settings/>
+            <con:testStep type="restrequest" name="Request 1" id="a3d2f697-5b59-4ed2-829a-f124e333a00a">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="http://localhost:8080"
+                            resourcePath="/film/add" methodName="Method 1" xsi:type="con:RestRequestStep">
+                    <con:restRequest name="Request 1" id="4c43455a-3113-45cb-ad7a-8e58674599ed"
+                                     mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8080</con:endpoint>
+                        <con:request>{
+                            "director": "Harry Potter",
+                            "name": "Chris Columbus"
+                            }
+                        </con:request>
+                        <con:originalUri>http://localhost/film/add</con:originalUri>
+                        <con:assertion type="Simple Contains" id="0dedbce2-a83b-4920-acf0-48a917094f9d" name="Contains">
+                            <con:configuration>
+                                <token>{"name":"Chris Columbus","director":"Harry Potter"}</token>
+                                <ignoreCase>true</ignoreCase>
+                                <useRegEx>false</useRegEx>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="accept" value="application/json"/>
+                            <con:entry key="Content-Type" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>accept</con:entry>
+                            <con:entry>Content-Type</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="97af9c2f-e64f-49a8-8ffe-aaf6011cfb0f" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="Verify delete by film id request"
+                      searchProperties="true">
+            <con:description>TestCase generated for REST Resource [delete] located at [/film/{id}]</con:description>
+            <con:settings/>
+            <con:testStep type="restrequest" name="Request 1" id="d2052d89-b01d-410e-8931-6487710ff777">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="http://localhost:8080"
+                            resourcePath="/film/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+                    <con:restRequest name="Request 1" id="5a239e03-ef99-4927-a108-8e1463446ebe"
+                                     mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8080</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/film/1</con:originalUri>
+                        <con:assertion type="Valid HTTP Status Codes" id="7a0423ad-1fe4-4985-8efe-dabdcbe95c05"
+                                       name="Valid HTTP Status Codes">
+                            <con:configuration>
+                                <codes>200</codes>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <con:entry key="id" value="2"/>
+                            <con:entry key="accept" value="application/json"/>
+                        </con:parameters>
+                        <con:parameterOrder>
+                            <con:entry>id</con:entry>
+                        </con:parameterOrder>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="c0568f3d-d6eb-45ad-a2c6-229149834798" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="Verify list of films /film/list request"
+                      searchProperties="true">
+            <con:description>TestCase generated for REST Resource [list] located at [/film/list]</con:description>
+            <con:settings/>
+            <con:testStep type="restrequest" name="Request 1" id="a03136eb-e47b-4bba-9734-d6b594d56479">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="http://localhost:8080"
+                            resourcePath="/film/list" methodName="Method 1" xsi:type="con:RestRequestStep">
+                    <con:restRequest name="Request 1" id="1bd4ae1e-ccb1-4534-81bf-c1a45271af73"
+                                     mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8080</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/film/list</con:originalUri>
+                        <con:assertion type="Valid HTTP Status Codes" id="86eb5793-6223-4eb6-b1c2-d8a7a0cd801d"
+                                       name="Valid HTTP Status Codes">
+                            <con:configuration>
+                                <codes>200</codes>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:testCase id="b6e013d1-e988-46c5-910e-936846d31f9c" failOnError="true" failTestCaseOnErrors="true"
+                      keepSession="false" maxResults="0" name="Verify update request" searchProperties="true">
+            <con:description>TestCase generated for REST Resource [update] located at [/film/update/{id}]
+            </con:description>
+            <con:settings/>
+            <con:testStep type="restrequest" name="Request 1" id="e1603925-ba5a-46f6-975a-a6d9249ac44b">
+                <con:settings/>
+                <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="http://localhost:8080"
+                            resourcePath="/film/update/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+                    <con:restRequest name="Request 1" id="b068ea9a-feb4-438a-82cd-22e6a2037ed0"
+                                     mediaType="application/json" postQueryString="false">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8080</con:endpoint>
+                        <con:request>{
+                            "director": "The Lord of the Rings: The Fellowship of the Ring",
+                            "name": "Peter Jackson"
+                            }
+                        </con:request>
+                        <con:originalUri>http://localhost/film/update/3</con:originalUri>
+                        <con:assertion type="Simple Contains" id="ae8c9267-3d7a-43c7-9fec-d9b7841d9745" name="Contains">
+                            <con:configuration>
+                                <token>{"name":"Peter Jackson","director":"The Lord of the Rings: The Fellowship of the
+                                    Ring"}
+                                </token>
+                                <ignoreCase>false</ignoreCase>
+                                <useRegEx>false</useRegEx>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:credentials>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:jmsPropertyConfig/>
+                        <con:parameters>
+                            <entry key="id" value="2" xmlns="http://eviware.com/soapui/config"/>
+                        </con:parameters>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+        </con:testCase>
+        <con:properties/>
+    </con:testSuite>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+    <con:sensitiveInformation/>
+</con:soapui-project>
