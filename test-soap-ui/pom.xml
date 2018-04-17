@@ -4,6 +4,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <repositories>
+        <repository>
+            <id>soapui</id>
+            <url>http://www.soapui.org/repository/maven2</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.smartbear.soapui</groupId>
+            <artifactId>soapui</artifactId>
+            <version>5.1.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>eviware</groupId>
+            <artifactId>maven-soapui-plugin</artifactId>
+            <version>4.5.0</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
     <parent>
         <groupId>online.qastudy.resttest</groupId>
         <artifactId>rest-test</artifactId>
@@ -13,6 +43,5 @@
     <groupId>online.qastudy.resttest</groupId>
     <artifactId>test-soap-ui</artifactId>
     <version>1.0</version>
-
 
 </project>
