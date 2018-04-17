@@ -26,9 +26,11 @@ public class FilmRestController {
 		this.filmService = filmService;
 	}
 
+
 	@RequestMapping(method = RequestMethod.GET, path = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<Film> getFilm(@PathVariable Long id) {
-		return new ResponseEntity<>(filmService.getById(id), HttpStatus.OK);
+		Film film = filmService.getById(id).get();
+		return new ResponseEntity<>(film, HttpStatus.OK);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, path = "/list", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

@@ -4,6 +4,7 @@ import com.company.model.Film;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public interface FilmService {
 	List<Film> addFilms(Map<String, String> films);
@@ -12,7 +13,7 @@ public interface FilmService {
 
 	List<Film> findAllFilms();
 
-	Film getById(Long id);
+	Optional<Film> getById(Long id);
 
 	void delete(Long id);
 

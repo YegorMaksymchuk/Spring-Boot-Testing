@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -31,8 +32,8 @@ public class FilmServiceImpl implements FilmService {
 	}
 
 	@Override
-	public Film getById(Long id) {
-		return filmRepository.getOne(id);
+	public Optional<Film> getById(Long id) {
+		return filmRepository.findById(id);
 	}
 
 	@Override
@@ -47,11 +48,11 @@ public class FilmServiceImpl implements FilmService {
 
 	@Override
 	public Film update(Long id, Film film) {
-		Film updatedFilm = filmRepository.getOne(id);
+		Film updatedFilm = filmRepository.findById(id).get();
 		if (updatedFilm != null) {
 			updatedFilm.setDirector(film.getDirector());
 			updatedFilm.setName(film.getName());
-			return filmRepository.saveAndFlush(film);
+			return filmRepository.save(updatedFilm);
 		} else {
 			return null;
 		}
