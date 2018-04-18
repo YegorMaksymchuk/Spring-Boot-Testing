@@ -41,6 +41,10 @@ public class FilmRestController {
 		return new ResponseEntity<>(filmService.findAllFilms(), HttpStatus.OK);
 	}
 
+//	@RequestMapping(method = RequestMethod.GET, path = "/bydirector", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+//	public ResponseEntity<List<Film>> findBooksByAuthor(@RequestParam String director) {
+//		return new ResponseEntity<>(filmService.findFilmsByDirector(director), HttpStatus.OK);
+//	}
 
 	@RequestMapping(method = RequestMethod.DELETE, path = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity deleteFilm(@PathVariable Long id) {
