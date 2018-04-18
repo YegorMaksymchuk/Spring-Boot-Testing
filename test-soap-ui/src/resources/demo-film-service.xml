@@ -502,10 +502,8 @@
                             <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
                         </con:settings>
                         <con:endpoint>http://localhost:8080</con:endpoint>
-                        <con:request>{
-                            "director": "The Lord of the Rings: The Fellowship of the Ring",
-                            "name": "Peter Jackson"
-                            }
+                        <con:request>{"director": "The Lord of the Rings: The Fellowship of the Ring",
+                            "name": "Peter Jackson"}
                         </con:request>
                         <con:originalUri>http://localhost/film/update/3</con:originalUri>
 
