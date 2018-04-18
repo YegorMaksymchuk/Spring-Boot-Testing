@@ -7,6 +7,7 @@
                    id="ef98acc6-22ac-42f9-9b92-942e51014107" wadlVersion="http://wadl.dev.java.net/2009/02"
                    name="http://localhost:8080" type="rest">
         <con:settings/>
+
         <con:definitionCache type="TEXT" rootPart=""/>
         <con:endpoints>
             <con:endpoint>http://localhost:8080</con:endpoint>
@@ -507,7 +508,8 @@
                             }
                         </con:request>
                         <con:originalUri>http://localhost/film/update/3</con:originalUri>
-                        <con:assertion type="Simple Contains" id="ae8c9267-3d7a-43c7-9fec-d9b7841d9745" name="Contains">
+
+                        <con:assertion type="Simple Contains" id="6e6141ad-16bf-4688-9116-0b6b44d8e7c1" name="Contains">
                             <con:configuration>
                                 <token>{"name":"Peter Jackson","director":"The Lord of the Rings: The Fellowship of the
                                     Ring"}
