@@ -34,6 +34,4 @@ public class NewFeatureTest {
 		assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 		assertThat(response.getBody(), notNullValue());
 	}
-
-
 }
