@@ -42,7 +42,7 @@ public class FilmRestController {
 	}
 
 //	@RequestMapping(method = RequestMethod.GET, path = "/bydirector", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-//	public ResponseEntity<List<Film>> findBooksByAuthor(@RequestParam String director) {
+//	public ResponseEntity<List<Film>> findFilmByDirector(@RequestParam("director") String director) {
 //		return new ResponseEntity<>(filmService.findFilmsByDirector(director), HttpStatus.OK);
 //	}
 
