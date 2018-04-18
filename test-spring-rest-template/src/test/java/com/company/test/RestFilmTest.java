@@ -27,7 +27,6 @@ public class RestFilmTest {
 		assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 	}
 
-
 	@Test
 	public void canGetListOfFilm() {
 		ResponseEntity<String> response
