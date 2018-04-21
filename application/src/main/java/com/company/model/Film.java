@@ -1,6 +1,5 @@
 package com.company.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreType;
 import lombok.*;
 
@@ -15,7 +14,7 @@ import javax.persistence.*;
 @ToString
 @JsonIgnoreType
 public class Film {
-	@JsonIgnore
+	//	@JsonIgnore
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

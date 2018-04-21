@@ -29,7 +29,7 @@ public class FilmRestController {
 
 	@RequestMapping(method = RequestMethod.GET, path = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<Film> getFilm(@PathVariable Long id) {
-		Film film = filmService.getById(id).get();
+		Film film = filmService.getById(id);
 		return new ResponseEntity<>(film, HttpStatus.OK);
 	}
 
